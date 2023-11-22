@@ -89,7 +89,7 @@ body {
 	top: -10%;
 }
 
-.box h1 {
+h1 {
 	color: var(--text-color);
 	letter-spacing: 1px;
 	font-weight: 500;
@@ -136,6 +136,7 @@ body {
 	border-radius: 50%;
 	border: 3px solid var(--bg-color);
 	overflow: hidden;
+	transition: var(--color-transition);
 }
 
 .profile-image img {
@@ -212,6 +213,18 @@ body {
 	transition: var(--color-transition);
 }
 
+.repo-section .repo:focus,
+.repo-section .repo:focus-visible {
+	outline: none;
+	filter: brightness(120%);
+}
+
+html.light .repo-section .repo:focus,
+html.light .repo-section .repo:focus-visible {
+	outline: none;
+	filter: brightness(80%);
+}
+
 .repo-section .repo:hover,
 .repo-section .repo:active {
 	filter: brightness(120%);
@@ -222,6 +235,7 @@ html.light .repo-section .repo:active {
 	filter: brightness(80%);
 }
 
+/* 672px */
 @media (max-width: 42em) {
 	.input {
 		width: 80%;
@@ -253,6 +267,7 @@ html.light .repo-section .repo:active {
 	}
 }
 
+/* 400px */
 @media (max-width: 25em) {
 	.toggler {
 		margin-top: 1rem;
@@ -260,6 +275,11 @@ html.light .repo-section .repo:active {
 	.input {
 		margin-top: 1rem;
 	}
+
+	.profile-details {
+		align-items: center;
+	}
+
 	.user-metrics {
 		width: 100%;
 		justify-content: center;
@@ -274,5 +294,9 @@ html.light .repo-section .repo:active {
 
 	.user-metrics div:last-child {
 		margin-right: 1rem;
+	}
+
+	.repo-section {
+		justify-content: center;
 	}
 }
